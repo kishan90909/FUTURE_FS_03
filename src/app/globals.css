@@ -1,0 +1,227 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== THEME VARIABLES ===== */
+:root {
+  --bg-light: #f9fafb;
+  --bg-dark: #0f172a;
+
+  --text-light: #111827;
+  --text-dark: #e5e7eb;
+}
+
+/* ===== BASE ===== */
+body {
+  @apply bg-[var(--bg-light)] text-[var(--text-light)] antialiased transition-colors duration-300;
+}
+
+.dark body {
+  @apply bg-[var(--bg-dark)] text-[var(--text-dark)];
+}
+
+/* ===== HEADINGS ===== */
+h1,
+h2,
+h3 {
+  @apply text-gray-900 dark:text-gray-100;
+}
+
+/* ===== NORMAL TEXT ===== */
+p,
+span {
+  @apply text-gray-600 dark:text-gray-400;
+}
+
+/* ===== CARDS ===== */
+.card {
+  @apply bg-white dark:bg-gray-900
+         text-gray-900 dark:text-gray-100
+         rounded-xl shadow-sm hover:shadow-md transition;
+}
+
+/* ===== BUTTONS ===== */
+.btn-primary {
+  @apply bg-gray-900 dark:bg-white
+         text-white dark:text-black
+         px-6 py-2 rounded-lg transition;
+}
+
+.btn-outline {
+  @apply border border-gray-300 dark:border-gray-700
+         text-gray-700 dark:text-gray-300
+         hover:bg-gray-100 dark:hover:bg-gray-800
+         px-4 py-2 rounded-lg transition;
+}
+
+/* ===============================
+   AUTH FORMS (LOGIN / SIGNUP)
+================================ */
+
+.auth-container {
+  @apply min-h-[80vh] flex items-center justify-center px-4;
+}
+
+.auth-card {
+  @apply w-full max-w-md bg-white dark:bg-gray-900
+         rounded-2xl shadow-lg p-6 space-y-4
+         border border-gray-200 dark:border-gray-700;
+}
+
+.auth-title {
+  @apply text-2xl font-bold text-center
+         text-gray-900 dark:text-white;
+}
+
+.auth-input {
+  @apply w-full px-4 py-2 rounded-lg
+         border border-gray-300 dark:border-gray-700
+         bg-white dark:bg-gray-900
+         text-gray-900 dark:text-gray-100
+         placeholder-gray-400
+         focus:outline-none focus:ring-2 focus:ring-gray-900
+         dark:focus:ring-gray-300 transition;
+}
+
+.auth-textarea {
+  @apply auth-input resize-none;
+}
+
+.auth-btn {
+  @apply w-full bg-gray-900 dark:bg-white
+         text-white dark:text-black
+         py-2 rounded-lg font-semibold
+         hover:opacity-90 transition;
+}
+
+.auth-link {
+  @apply underline text-gray-700 dark:text-gray-300;
+}
+
+.auth-error {
+  @apply text-red-500 text-sm text-center;
+}
+
+
+/* ===============================
+   AMAZON / FLIPKART PROFILE PAGE
+================================ */
+
+.profile-layout {
+  @apply max-w-7xl mx-auto px-6 py-10
+         grid grid-cols-1 md:grid-cols-[260px_1fr] gap-8;
+}
+
+/* SIDEBAR */
+.profile-sidebar {
+  @apply bg-white dark:bg-gray-900
+         border border-gray-200 dark:border-gray-700
+         rounded-xl p-6 text-center;
+}
+
+.profile-avatar {
+  @apply w-16 h-16 mx-auto mb-3
+         flex items-center justify-center
+         rounded-full bg-gray-900 dark:bg-white
+         text-white dark:text-black text-2xl font-bold;
+}
+
+.profile-name {
+  @apply font-semibold text-gray-900 dark:text-white;
+}
+
+.profile-email {
+  @apply text-sm text-gray-600 dark:text-gray-400 mb-6;
+}
+
+.profile-menu {
+  @apply space-y-3 text-sm;
+}
+
+.profile-menu li {
+  @apply cursor-pointer text-gray-700 dark:text-gray-300
+         hover:text-gray-900 dark:hover:text-white;
+}
+
+.profile-menu li.active {
+  @apply font-semibold text-gray-900 dark:text-white;
+}
+
+.profile-menu li.logout {
+  @apply text-red-600 hover:text-red-700;
+}
+
+/* CONTENT */
+.profile-content {
+  @apply space-y-6;
+}
+
+.profile-card {
+  @apply bg-white dark:bg-gray-900
+         border border-gray-200 dark:border-gray-700
+         rounded-xl p-6;
+}
+
+.profile-card h2 {
+  @apply text-lg font-semibold mb-4
+         text-gray-900 dark:text-white;
+}
+
+.profile-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm;
+}
+
+.profile-grid p {
+  @apply bg-gray-50 dark:bg-gray-800
+         p-3 rounded-lg;
+}
+
+.profile-grid span {
+  @apply block text-xs text-gray-500 mb-1;
+}
+
+.profile-row {
+  @apply flex items-center justify-between;
+}
+
+.empty-text {
+  @apply text-sm text-gray-600 dark:text-gray-400;
+}
+
+.address-box {
+  @apply border border-gray-200 dark:border-gray-700
+         rounded-lg p-3 mb-2
+         text-sm bg-gray-50 dark:bg-gray-800;
+}
+
+/* ===============================
+   PROFILE SIDEBAR UX POLISH
+================================ */
+
+.profile-menu li {
+  @apply px-3 py-2 rounded-lg transition
+         cursor-pointer select-none;
+}
+
+/* Hover effect like Amazon */
+.profile-menu li:hover {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+/* Active section highlight */
+.profile-menu li.active {
+  @apply bg-gray-200 dark:bg-gray-700
+         font-semibold text-gray-900 dark:text-white;
+}
+
+/* Logout emphasis */
+.profile-menu li.logout {
+  @apply text-red-600 hover:bg-red-50 dark:hover:bg-red-900/20;
+}
+
+
+.order-card {
+  @apply border border-gray-200 dark:border-gray-700
+         rounded-lg p-4 mb-3
+         text-sm bg-gray-50 dark:bg-gray-800;
+}
