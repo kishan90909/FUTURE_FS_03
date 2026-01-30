@@ -1,4 +1,3 @@
-````markdown
 # 🛍️ Urban Store – Modern E-Commerce Platform
 
 <div align="center">
@@ -215,4 +214,5 @@ NEXT_PUBLIC_FIREBASE_APP_ID=xxxx
 ---
 
 *Built with ❤️ using Next.js & Firebase | 2026*
+
 
